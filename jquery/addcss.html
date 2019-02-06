@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery Duniailkom</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	/*
+	nilai argumen dari method css() adalah property CSS. Jika kita salah tulis atau property tersebut tidak di-set dari CSS, hasilnya akan kosong.
+	*/
+	
+   $(document).ready(function() {
+  
+     $("#ambil").click(function() {
+       var nilai1 = $("#box").css("width");
+       var nilai2 = $("#box").css("height");
+       var nilai3 = $("#box").css("background-color");
+       $("#tekape").html(nilai1+"<br>"+nilai2+"<br>"+nilai3);
+     })
+  
+   });
+   </script>
+   <style>
+   #box {
+     width: 300px;
+     height: 80px;
+     background-color: pink;
+     border: 2px solid black;
+   }
+   </style>
+</head>
+<body>
+<div id="box"></div>
+<br>
+<button id="ambil">Ambil Property CSS</button>
+<p id="tekape"></p>
+</body>
+</html>

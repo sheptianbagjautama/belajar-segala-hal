@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+   		//Jquery Event seperti alert(), clik(), onclick() dll
+   		//menggunakan jquery lebih praktis dan singkat dibandingkan dengan menggunakan pure javascript 
+
+
+   		//format penulisan event
+   		/*
+   		$("jQuery_Selector").jQuery_Event(function() { ...isi event disini...   })
+   		*/
+
+   		$(document).ready(function() {
+   			$("#paragraf").click(function() {
+   				alert('Saya sudah diklik');
+   			});
+   		});
+   </script>
+</head>
+<body>
+	<p id="paragraf"">
+		Silahkan klik saya
+	</p>
+</body>
+</html>

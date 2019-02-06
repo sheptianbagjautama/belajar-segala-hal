@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar jQuery Duniailkom</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    /*
+    elector $(this), kita bisa membuat kode program yang lebih efisien untuk berbagai selector sekaligus
+    */
+    $(document).ready(function() {
+ 
+      $("div").click(function() {
+        var lebar_box = $(this).width();
+        var tinggi_box = $(this).height();
+        $(this).width(lebar_box + 10);
+        $(this).height(tinggi_box + 10);
+      })
+       
+    });
+   </script>
+   <style>
+   div {
+     width: 150px;
+     height: 30px;
+     background-color: pink;
+     border: 2px solid black;
+     margin-bottom: 10px;
+     cursor: pointer;
+   }
+   </style>
+</head>
+<body>
+  <h2>Belajar jQuery Duniailkom</h2>
+  <div id="box1"></div>
+  <div id="box2"></div>
+  <div id="box3"></div>
+</body>
+</html>

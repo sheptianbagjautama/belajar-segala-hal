@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery Duniailkom</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+  
+     $("#tukar").click(function() {
+       $("#box").css("width","500px");
+       $("#box").css("height","120px");
+       $("#box").css("background-color","yellow");
+     })
+  
+   });
+   </script>
+   <style>
+   #box {
+     width: 300px;
+     height: 80px;
+     background-color: pink;
+     border: 2px solid black;
+   }
+   </style>
+</head>
+<body>
+<div id="box"></div>
+<br>
+<button id="tukar">Change!</button>
+</body>
+</html>

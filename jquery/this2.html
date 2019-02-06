@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>Belajar jQuery Duniailkom</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+  
+     $("#box1").click(function() {
+       var lebar_box = $("#box1").width();
+       var tinggi_box = $("#box1").height();
+       $("#box1").width(lebar_box + 10);
+       $("#box1").height(tinggi_box + 10);
+     })
+  
+     $("#box2").click(function() {
+       var lebar_box = $("#box2").width();
+       var tinggi_box = $("#box2").height();
+       $("#box2").width(lebar_box + 10);
+       $("#box2").height(tinggi_box + 10);
+     })
+  
+     $("#box3").click(function() {
+       var lebar_box = $("#box3").width();
+       var tinggi_box = $("#box3").height();
+       $("#box3").width(lebar_box + 10);
+       $("#box3").height(tinggi_box + 10);
+     })
+  
+   });
+   </script>
+   <style>
+   div {
+     width: 150px;
+     height: 30px;
+     background-color: pink;
+     border: 2px solid black;
+     margin-bottom: 10px;
+     cursor: pointer;
+   }
+   </style>
+</head>
+<body>
+  <h2>Belajar jQuery Duniailkom</h2>
+  <div id="box1"></div>
+  <div id="box2"></div>
+  <div id="box3"></div>
+</body>
+</html>

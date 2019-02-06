@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		//Fungsi add event listener
+		// sama halnya dengan jquery window.onload ini == $(document).ready(function ())
+		window.onload = function()
+		{
+			document.getElementById("paragraf").
+			addEventListener("click", function(){
+				alert('Saya sudah di klik');
+			})
+		}
+   </script>
+</head>
+<body>
+	<p id="paragraf"">
+		Silahkan klik saya
+	</p>
+</body>
+</html>

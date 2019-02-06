@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#tombol").click(function() {
+				//mengambil nilai dari tag p
+
+				//var nilai = $("#paragraf").text(); -> .text() hanya mengambil text saja untuk tag didalam p semua dihilangkan
+
+				//var nilai = $("#paragraf").html(); -> mengambil seluruh text beserta tagnya
+
+				var nilai = $("#paragraf").html();
+
+				//memanggil variabel nilai dengan event alert
+				alert(nilai);
+			})
+		});
+   </script>
+</head>
+<body>
+	<p id="paragraf">
+		Sedang belajar <em>jQuery</em> di <b>Duniailkom...</b>
+	</p>
+
+	<button id="tombol">Ambil Nilai</button>
+
+</body>
+</html>

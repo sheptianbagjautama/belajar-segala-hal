@@ -1,0 +1,13 @@
+h1{
+	text-align: center;
+}
+
+.gambar{
+	width: 300px;
+	float: left;
+	margin-right: 10px;
+}
+
+#description-one{
+    text-align: justify;
+}

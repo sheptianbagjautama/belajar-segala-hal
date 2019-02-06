@@ -1,0 +1,28 @@
+.kotak {
+    /* Menggunakan static tidak bisa diubah  */
+    background: blue;
+    position: static;
+}
+
+.kotak2 {
+    /* Menggunakan relativ dapat diubah dengan misalkan dengan property left, right, etc */
+    margin-top: 20px;
+    background: blue;
+    position: relative;
+    /* left: 40px; */
+    /* top: 600px; */
+    padding: 10px;
+}
+
+.kotak3{
+    /*  */
+    background: red;
+    position:relative;
+    left: 200px;
+}
+
+.kotak4{
+    background: pink;
+    position:absolute;
+    left: 200px;
+}

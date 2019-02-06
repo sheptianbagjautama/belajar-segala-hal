@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>Belajar jQuery Duniailkom</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+  
+    $("#box").click(function() {
+      $(this).html("Sudah di Klik");
+      $(this).css("background-color","silver");
+  })
+  
+});
+</script>
+<style>
+  #box {
+    width: 300px;
+    height: 80px;
+    background-color: pink;
+    border: 2px solid black;
+    line-height: 80px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h2>Belajar jQuery Duniailkom</h2>
+  <div id="box">Click Me!</div>
+</body>
+</html>

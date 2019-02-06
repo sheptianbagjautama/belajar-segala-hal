@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery Duniailkom</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+  
+     $("#tombol_hide").click(function() {
+       $("#box").hide(1000);
+     })
+  
+     $("#tombol_show").click(function() {
+       $("#box").show(1000);
+     })
+  
+   });
+   </script>
+   <style>
+   #box {
+    display: none;
+     width: 300px;
+     height: 80px;
+     background-color: pink;
+     border: 2px solid black;
+   }
+   </style>
+</head>
+<body>
+<h2>Belajar jQuery Duniailkom</h2>
+<button id="tombol_hide">Hide</button>
+<button id="tombol_show">Show</button>
+<br><br>
+<div id="box"></div>
+</body>
+</html>

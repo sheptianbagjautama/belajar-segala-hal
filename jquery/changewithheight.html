@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery Duniailkom</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+  
+     $("#kurangi_lebar").click(function() {
+       var lebar_box = $("#box").width();
+       $("#box").width(lebar_box - 10);
+    })
+  
+     $("#kurangi_tinggi").click(function() {
+       var tinggi_box = $("#box").height();
+       $("#box").height(tinggi_box - 10);
+     })
+  
+     $("#tambah_lebar").click(function() {
+       var lebar_box = $("#box").width();
+       $("#box").width(lebar_box + 10);
+     })
+  
+     $("#tambah_tinggi").click(function() {
+       var tinggi_box = $("#box").height();
+       $("#box").height(tinggi_box + 10);
+     })
+  
+   });
+   </script>
+   <style>
+   #box {
+     width: 300px;
+     height: 80px;
+     background-color: pink;
+     border: 2px solid black;
+   }
+   </style>
+</head>
+<body>
+  <button id="kurangi_lebar">Kurangi Lebar</button>
+  <button id="kurangi_tinggi">Kurangi Tinggi</button>
+  <button id="tambah_lebar">Tambah Lebar</button>
+  <button id="tambah_tinggi">Tambah Tinggi</button>
+<br><br>
+  <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		///val() digunakan untuk mengambil nilai dari form HTML
+		$(document).ready(function() {
+  
+		     $("#tombol").click(function() {
+		       var nama = $("#nama").val();
+		       var kota = $("#kota").val();
+		       alert("Nama :" + nama  + "Kota : " + kota);
+		     })
+	  
+	   });
+   </script>
+</head>
+<body>
+
+	Nama: 
+	<input type="text" id="nama" value="Duniailkom...">
+
+	<select id="kota" name="kota">
+	   <option value="jakarta">Jakarta</option>
+	   <option value="bandung">Bandung</option>
+	   <option value="bogor">Bogor</option>
+	</select>
+
+	<button id="tombol">Ambil Nilai</button>
+</body>
+</html>

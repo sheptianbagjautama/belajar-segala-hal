@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    /*
+    Method empty() hanya menghapus isi dari sebuah element, sedangkan element itu sendiri tidak ikut dihapus. Hal ini berbeda dengan method remove() yang menghapus isi element beserta element itu sendiri.
+    */
+      $(document).ready(function() {
+  
+     $("#tambah").click(function() {
+       $("#belajar").append("<li>Belajar jQuery di Duniailkom</li>");
+     })
+  
+     $("#kosong").click(function() {
+       $("#belajar").empty();
+    })
+  
+     $("#hapus").click(function() {
+       $("#belajar").remove();
+     })
+  
+   });
+
+   </script>
+</head>
+<body>
+
+  <button id="tambah">Tambah jQuery</button>
+  <button id="kosong">Kosongkan</button>  
+  <button id="hapus">Hapus Semua</button>  
+  <ul id="belajar">
+   <li id="list_html">Belajar HTML di Duniailkom</li>
+   <li id="list_css">Belajar CSS di Duniailkom</li>
+   <li id="list_php">Belajar PHP di Duniailkom</li>
+   <li id="list_js">Belajar JavaScript di Duniailkom</li>
+   <li id="list_mysql">Belajar MySQL di Duniailkom</li>
+</ul>
+
+</body>
+</html>

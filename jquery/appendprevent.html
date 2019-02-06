@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		/*
+		Method append() akan menambahkan elemen baru ke bagian akhir, sedangkan prepend() akan menambahkan elemen HTML baru ke bagian awal.
+		*/
+		$(document).ready(function (){
+			$("#tombol_app").click(function () {
+				$("#box").append("<p>jQuery is Amazingg...</p>")
+			})
+
+			$("#tombol_pre").click(function () {
+				$("#box").prepend("<p>Learning jQuery....</p>")
+			})
+		});
+   </script>
+</head>
+<body>
+	<div id="box">
+		<h2>Sedang belajar jQuery di Duniailkom</h2>
+	</div>
+
+	<button id="tombol_app">Append</button>
+	<button id="tombol_pre">Prepend</button>
+</body>
+</html>

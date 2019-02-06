@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		Method remove() akan menghapus tag saat ini, beserta seluruh isinya.
+		*/
+	$(document).ready(function() {
+  
+     $("#hapus_html").click(function() {
+       $("#list_html").remove();
+     })
+  
+     $("#hapus_css").click(function() {
+       $("#list_css").remove();
+     })
+  
+     $("#hapus_php").click(function() {
+       $("#list_php").remove();
+     })
+  
+     $("#hapus_all").click(function() {
+       $("#belajar").remove();
+     })
+ 
+   });
+   </script>
+</head>
+<body>
+
+	<button id="hapus_html">Hapus HTML</button>
+	<button id="hapus_css">Hapus CSS</button>  
+	<button id="hapus_php">Hapus PHP</button>
+	<button id="hapus_all">Hapus Semua!</button>  
+	<ul id="belajar">
+	   <li id="list_html">Belajar HTML </li>
+	   <li id="list_css">Belajar CSS </li>
+	   <li id="list_php">Belajar PHP </li>
+	   <li id="list_js">Belajar JavaScript </li>
+	   <li id="list_mysql">Belajar MySQL </li>
+	</ul>
+</body>
+</html>

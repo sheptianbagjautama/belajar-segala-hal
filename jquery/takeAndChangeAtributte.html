@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar jQuery </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+  
+	    $("#tambah").click(function() {
+	     $("#link_jquery").attr("href",
+	       "https://facebook.com");
+
+	     $("#link_jquery").attr("title","Belajar jQuery yuk bro...");
+	    })
+  
+   });
+   </script>
+</head>
+<body>
+	<h2>Belajar jQuery Duniailkom</h2>
+	<p>
+   		<a id="link_jquery">Tutorial jQuery Duniailkom</a>
+	</p>
+
+	<button id="tambah">Tambah Atribut</button>
+
+</body>
+</html>
