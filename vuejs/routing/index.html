@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+
+    <title>Belajar Vue JS</title>
+</head>
+
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
+<body>
+        <div id="app">
+                <router-link to="/">Home</router-link>
+                <router-link to="/about">About</router-link>        
+                <router-link to="/books">Books</router-link>        
+                <hr>
+                <transition name="fade" mode="out-in">
+                    <router-view></router-view>
+                </transition>
+            </div>
+</body>
+<script type="module">
+    import { BooksComponent } from './BooksComponent.js'
+    import { BookComponent } from './BookComponent.js'
+
+    //definisikan konfiguratsi component
+    const Home = { template:'<div>Halaman Home</div>'}
+    const About = { template: '<div>Halaman About</div>'}
+
+    //mapping route path dengan componentnya
+    const routes = [
+    { path: '/', component: Home, alias: '/home' },
+    { path: '/about', component: About, meta:{login:true} },
+    { path: '/books', component: BooksComponent },
+    { path: '/book/:id', component: BookComponent, props:true},
+    { path: '*', redirect: '/' }
+]
+
+    //register routes pada objek router
+    const router = new VueRouter({
+        routes // short `routes: routes`
+    })
+
+    //register objek router pada objek Vue
+    var vm = new Vue({
+        el:'#app',
+        router,
+    })
+
+    router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.login)) {
+      alert('Halaman ini hanya untuk user yang sudah login!')
+      next(false)
+  }
+  else{
+      next()
+  }
+})
+
+
+</script>
+</html>

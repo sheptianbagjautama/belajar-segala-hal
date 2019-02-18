@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Hook Create</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="info('selamat datang')">Click</button>
+        <br>
+        <a href="http://vuejs.org" v-on:click.prevent="info('Go to link')">Vuejs.org</a>
+    
+        <!-- mencegah reload halaman saat event submit -->
+        <form v-on:submit.prevent="onSubmit"></form>
+
+        <!-- ketika ditekan enter maka akan menjalankan fungsi submit -->
+        <input v-on:keyup.enter="info('Terima kasih ' + $event.target.value)">
+
+        <!-- Shift + Click -->
+        <button v-on:click.ctrl="info('hola')">
+        SHIFT + CLICK
+        </button>
+    </div>
+
+
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            counter:0
+        },
+        methods:{
+            info(text){
+                alert(text)
+            },
+            link(){
+                alert('Go to link '+ event.target.value)
+                event.preventDefault()
+            }
+        }
+    })
+</script>
+</html>

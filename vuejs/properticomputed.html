@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Properti Template</title>
+</head>
+<style>
+    /* #app{
+        width: 100%;
+        height: 200px;
+        background-color: black;
+    }
+
+    #app2{
+        width: 100%;
+        height: 200px;
+        background-color: brown;
+    } */
+</style>
+<body>
+    <div id="app">
+        {{ fullname }}
+    </div>
+
+</body>
+<script>
+
+    /*
+        Properti computed berisi fungsi-fungsi yang nilainya akan senantiasa dievaluasi ketika terjadi perubahan variabel data yang menjadi dependensinya. Fungsi pada computed umumnya mengembalikan nilai (return value).
+
+
+        Catatan: Meskipun bentuknya fungsi namun fungsi pada computed tidak memiliki parameter dan oleh Vue tidak dianggap sebagai fungsi. Artinya kita tidak bisa memanggilnya this.fullName() melainkan this.fullName layaknya variabel. Jadi methods ini lebih tepat digunakan sebagai variabel yang nilainya berasal dari variabel lain.
+
+    */
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstname: 'Sheptian',
+            lasname: 'Bagja Utama'
+        },
+        computed: {
+            fullname: function (){
+                return this.firstname+ ' '+ this.lasname
+            }
+        }
+    })
+
+
+    
+
+
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <title>Belajar Vue JS</title>
+</head>
+
+<body>
+    <div id="app">
+        <template></template>
+    </div>
+</body>
+
+<script>
+    var store = new Vuex.Store({
+    strict: true, // supaya warning muncul
+    state: {
+        name: 'Hafid'
+    },
+    mutations: {
+        setName: (state, name) => {
+            state.name = name
+        }
+
+        /*
+        // boleh juga fungsi biasa
+        setName (state, name) {
+            state.name = name
+        }
+        */
+    },
+    getters: {
+        name: state => state.name
+    }
+})
+
+new Vue({
+    el: '#app',
+    computed: {
+        name: {
+            get () {
+                return store.getters.name
+            },
+            set (value) {
+                store.commit('setName', value)
+            }
+        }
+    },
+    template: `
+        <div>
+            <input v-model='name'>
+        </div>
+    `,
+})
+</script>
+</html>

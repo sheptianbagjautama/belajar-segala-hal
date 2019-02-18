@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Properti Template</title>
+</head>
+<style>
+    /* #app{
+        width: 100%;
+        height: 200px;
+        background-color: black;
+    }
+
+    #app2{
+        width: 100%;
+        height: 200px;
+        background-color: brown;
+    } */
+</style>
+<body>
+    <div id="app">
+       <h1>{{ message| upper}}</h1>
+    </div>
+</body>
+<script>
+    /*
+    properti filters yang dapat berisi fungsi untuk digunakan memanipulasi tampilan atau format teks pada template. Filters ditulis dengan menggunakan simbol | atau “pipe”.
+
+Contoh penggunaan filters adalah untuk mengubah bentuk teks menjadi huruf kapital.
+    */
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World!',
+        },
+
+        filters: {
+            upper(text){
+                return text.toUpperCase()
+            }
+        }
+    })
+    
+</script>
+</html>

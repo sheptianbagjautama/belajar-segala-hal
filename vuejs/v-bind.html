@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar VueJs</title>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imageSrc">
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            imageSrc:'react.png'
+        }
+    })
+
+    setTimeout(()=>{
+        vm.imageSrc = 'vue.png'
+    }, 3000);
+</script>
+</html>

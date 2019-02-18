@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar List Vue JS</title>
+</head>
+<body>
+    <div id="app">
+       <ul>
+           <li v-for="(book, index) of booksPrefixM" :key="index">
+               {{ book }}
+           </li>
+       </ul>
+    </div>
+</body>
+<script>
+    var vm =  new Vue({
+        el:'#app',
+        data:{
+            books : [
+                'C++ High Performance', 
+                'Mastering Linux Security and Hardening',
+                'Python Programming Blueprints', 
+                'Mastering PostgreSQL 10'
+            ]
+        },
+        computed:{
+            booksPrefixM(){
+                return this.books.filter((book)=>{
+                    return book[0]==='M'
+                })
+            }
+        }
+    })
+</script>
+</html>

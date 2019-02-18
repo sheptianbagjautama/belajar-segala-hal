@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Vue JS</title>
+</head>
+<body>
+    <!-- <div id="app">
+        <component-a></component-a>
+        <component-b></component-b>
+        <component-c></component-c>
+    </div> -->
+
+    <div id="app1">
+            <h1>Object Vue 1</h1>
+            <component-a></component-a>
+        </div>
+        
+        <div id="app2">
+            <h1>Object Vue 2</h1>
+            <component-a></component-a>
+        </div>
+</body>
+<script>
+    //INI ADALAH COMPONEN LOCAL
+    var ComponentA = {
+        template: '<p>Component A</p>'
+    }
+
+    new Vue({
+        el:'#app1',
+        components: {
+            'component-a' : ComponentA,
+        }
+    })
+
+    new Vue({
+        el:'#app2'
+    })
+
+    var ComponentB = {
+        template: '<p>Component B</p>'
+    }
+
+    var ComponentC = {
+        template: '<p>Component C</p>'
+    }
+
+    // new Vue({
+    //     el:'#app',
+    //     components: {
+    //         'component-a' : ComponentA,
+    //         'component-b' : ComponentB,
+    //         'component-c' : ComponentC
+    //     }
+    // })
+
+
+</script>
+</html>

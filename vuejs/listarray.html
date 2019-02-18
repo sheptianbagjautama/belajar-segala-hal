@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar List Vue JS</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- bisa menggunakan in ataupun of -->
+            <li v-for="book of books">
+                {{ book }}
+            </li>
+            <br>
+            <br>
+            <template v-for="book in books">
+                {{ book }}
+            </template>
+            <br>
+            <br>
+            <li v-for="(book, index) in books">
+                {{ index+1}}.{{ book }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data: {
+            books : [
+                'C++ High Performance',
+                'Mastering Linux Security and Hardening',
+                'Python Programming Blueprints',
+                'Mastering PostgreSQL 10'
+            ]
+        }
+    })
+</script>
+</html>

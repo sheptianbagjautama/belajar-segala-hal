@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Properti Template</title>
+</head>
+<style>
+    /* #app{
+        width: 100%;
+        height: 200px;
+        background-color: black;
+    }
+
+    #app2{
+        width: 100%;
+        height: 200px;
+        background-color: brown;
+    } */
+</style>
+<body>
+    <div id="app">
+        {{ counter }}
+        <button onclick="vm.incerement()">+</button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        },
+        methods: {
+            incerement(){
+                this.counter++
+            }
+        }
+    })
+</script>
+</html>

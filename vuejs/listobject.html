@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar List Vue JS</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- bisa menggunakan in ataupun of -->
+            <li v-for='value of book'>
+                {{ value }}
+            </li>
+            <br>
+            <li v-for='(value, key) of book'>
+                    {{ key }} : {{ value }}
+            </li>
+            <br>
+            <li v-for="(value, key, index) of book">
+                {{ index+1 }}. {{ key }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data: {
+            book: {
+                id:99,
+                title: 'C++ High Performance',
+                description: 'Write code that scales across CPU registers, multi core, and machine clusters',
+                authors:'Viktor Sehr, Bjorn Andrist',
+                publish_year:2018,
+                price:100000,
+            }
+        }
+    })
+</script>
+</html>

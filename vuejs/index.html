@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ 'Pesan: ' + message }}</h1>
+        <h2>{{ teks }}</h2>
+        <p>{{ nama }}</p>
+        <p>{{ umur }}</p>
+        <p>{{ menikah }}</p>
+        <p>{{ hobby }}</p>
+        <p>{{ brothers }}</p>
+        <p>{{ this.$data }}</p>
+        <p>{{ this.message }}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            //bisa menggunakan ini untuk mengirim data ke div
+            // el: '#app', 
+            data: {
+                message: 'Hellow World',
+                teks: 'Selamat malam indonesia',
+                nama : 'Sheptian Bagja Utama',
+                umur: 22,
+                menikah: false,
+                // hobby: 'Depan komputer mempelajari sesuatu yang baru',
+                hobby: ['coding','sleeping'], //array
+                brothers: {
+                    1: 'Yuliani',
+                    2: 'Angga',
+                    3: 'Rahma',
+                    4: 'Alvian'
+                }
+            }
+        })
+
+        //bisa juga dengan menggunakan ini untuk mengirimkan data ke div
+        vm.$mount('#app');
+    </script>
+</body>
+</html>

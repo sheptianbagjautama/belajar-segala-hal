@@ -1,0 +1,21 @@
+#first {
+    background-color: aqua;
+    background-image: linear-gradient(to right,#FF416C,#FF4B2B);
+}
+
+#first h1 {
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5em;
+}
+
+#first p {
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-style: italic;
+}
+
+.col-sm-4 {
+    border-radius: 3em;
+}

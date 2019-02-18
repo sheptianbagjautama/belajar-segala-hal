@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Handling Form Submit</title>
+</head>
+
+<style>
+        form {
+            border: 1px solid #ddd;
+            padding:5px;
+            width:225px;
+            background: #efefef;
+        }
+        label{
+            display: block;
+            margin-top: 5px;
+        }
+        
+        input, textarea, select, option {
+            min-width: 200px;
+        }
+        </style>
+
+<body>
+    <div id="app">
+        <form @submit.prevent="submitForm($event)" action="http://example.com/add-product" method="post">
+            
+
+            <!-- Validasi Form -->
+            <p v-if="errors.length">
+                <b>Please correct the following error(s):</b>
+                <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                </ul>
+            </p>
+            
+            <label>Title:</label>
+            <input type="text" v-model="title" ref="title"/>
+        
+            <label>Description:</label>
+            <textarea v-model="description" ref="description"></textarea>
+        
+            <label>Authors:</label>
+            <input type="text" v-model="authors" ref="authors">
+        
+            <label>Price:</label>
+            <input type="number" v-model.number="price" ref="price">
+        
+            <label>Categories:</label>
+            <select v-model="categories" name="categories" ref="categories" multiple>
+                <option v-for="option in options" :value="option.value">
+                    {{ option.text }}
+                </option>
+            </select>
+
+            <label>Cover :</label>
+            <input name="cover" ref="cover" type="file">
+        
+            <label></label>
+            <input type="submit" value="Submit">  
+        </form>
+    </div>
+</body>
+
+<script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+        title: 'Google Glass with VueJS',
+        description: 'Control Google Glass with VueJS',
+        authors: 'Sheptian Bagja Utama',
+        price: 75000,
+        categories: [],
+        options: [
+            { text: 'Graphics Programming', value: '01' },
+            { text: 'Mobile Application Development', value: '02' },
+            { text: 'Virtual and Augmented Reality', value: '03' }
+        ],
+        cover:'',
+        errors: []
+    },
+    methods: {
+        submitForm(event){
+            this.errors = []
+
+            if(this.title.length < 3 )
+            {
+                this.errors.push('Title minimal 3 karakter!')
+                this.$refs.title.select()
+            }
+            
+            if(this.title.description > 500)
+            {
+                this.errors.push('Description maximal 500 karakter!')
+                this.$refs.description.select()
+
+            }
+            
+            if(this.authors.length < 3)
+            {
+                this.errors.push('Authors minimal 3 karakter!')
+                this.$refs.description.select()
+
+            }
+            
+            if(this.price < 0)
+            {
+                this.errors.push('Authors minimal 3 karakter!')
+                this.$refs.authors.select()
+            }
+
+            if(this.categories.length === 0)
+            {
+                this.errors.push('Pilih minimal 1 category!')
+                this.$refs.categories.focus()
+            }
+
+            if(this.errors.length === 0)
+            {
+                alert('Terimakasih telah mengisi data dengan benar!')
+                
+                //mengambil nilai bisa dengan cara ini
+                let cover = this.$refs.cover.files[0]
+                let formData = new FormData()
+                formData.append('title', this.title)
+                formData.append('description', this.description)
+                formData.append('authors',this.authors)
+                formData.append('price',this.price)
+                formData.append('categories', this.categories)
+                formData.append('cover', cover);
+
+                //bisa juga menggunakan cara ini
+                // let formBook = this.$refs.formBook
+                // formData = new FormData(formBook);
+
+                // kirim data ke server
+                let xhttp = new XMLHttpRequest() // create objek XMLHttp
+
+                // definisikan fungsi ketika terjadi perubahan state
+                xhttp.onreadystatechange = function() {
+                    // state ini menunjukkan data terkirim dan diterima server dengan baik
+                    if (this.readyState == 4 && this.status == 200) {
+                        // respon text dari server
+                        console.log(this.responseText)
+                    }
+                }
+                // sesuaikan dengan lokasi file index.php di lokasi komputer kamu
+                xhttp.open("POST", "http://localhost:8080/Belajar VueJS/index.php", true)
+
+                // bisa juga langsung nama filenya jika berada dalam satu folder yang sama
+                // xhttp.open("POST", "index.php", true)
+
+                // kirim objek formData
+                xhttp.send(formData)
+            }
+
+            // event.preventDefault()
+        }
+    }
+})
+</script>
+</html>

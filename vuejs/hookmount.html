@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Hook Mount</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World!',
+        },
+
+        /* 
+            Hook Mount 
+            
+            beforeMount yaitu hook ketika template dicompile.
+            mounted yaitu hook ketika elemen (properti el) telah diinisialisasi, data telah dimuat dan view telah dirender.
+
+            Hasil :
+
+            before mount: el = {{ message }}
+            mounted: el = Hello World!
+        */
+
+        beforeMount(){
+            console.log('before mount: '+
+            'el = ' + this.$el.textContent)
+        },
+
+        mounted() {
+            console.log('mounted: '+
+            'el = ' + this.$el.textContent)
+        },
+
+        
+    })
+</script>
+</html>

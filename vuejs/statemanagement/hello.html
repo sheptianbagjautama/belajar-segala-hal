@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <title>Belajar Vue JS</title>
+</head>
+<body>
+    <div id="app">
+        <template></template>
+    </div>
+</body>
+<script type="module">
+    import { Hello } from "./Hello.js"
+
+    new Vue({
+        el: '#app',
+        components: {
+            'hello' : Hello
+        },
+
+        //view
+        template:`
+        <div>
+           {{ counter }}
+           <button @click="increment()"> + </button>
+           <hello></hello>
+        </div>
+        `
+    })
+</script>
+</html>

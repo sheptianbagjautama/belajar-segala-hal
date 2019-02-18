@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Belajar Vue JS</title>
+</head>
+
+<style>
+    .card {
+        background: #efefef;
+        border:1px solid #ddd;
+        margin-right:5px;
+        padding:5px;
+        width: 200px;
+        float:left;
+    }
+
+    h3{
+        min-height: 45px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <book
+            title="C++ High Performance"
+            description="Write code that scales across CPU registers, multi-core and machine"
+            image="1.jpg"
+        ></book>
+    </div>
+</body>
+
+<script>
+    var BookComponent = {
+        data(){
+            return {
+                classCard: 'card'
+            }
+        },
+        props: ['title', 'description', 'image'],
+        template : `
+            <div :class="classCard">
+                <h3>{{ title }}</h3>
+                <img :src="'image/'+image" style="width:100%">
+                <p v-html="description"></p>
+            </div>
+        `
+    }
+
+    new Vue({
+        el:'#app',
+        components: {
+            'book' : BookComponent,
+        }
+    })
+    
+</script>
+</html>
